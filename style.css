@@ -163,6 +163,10 @@
   height: 30px;
 }
 
+.container .input button {
+  cursor: pointer;
+}
+
 .container .input .disbled {
   pointer-events: none;
   color: #FF0000;
@@ -240,23 +244,23 @@
 }
 
 .diashow-img:nth-child(5) {
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
 }
 
 .diashow-img:nth-child(6) {
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
 }
 
 .diashow-img:nth-child(7) {
-  -webkit-animation-delay: 5s;
-          animation-delay: 5s;
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
 }
 
 .diashow-img:nth-child(8) {
-  -webkit-animation-delay: 8s;
-          animation-delay: 8s;
+  -webkit-animation-delay: 9s;
+          animation-delay: 9s;
 }
 
 #img_1 {
