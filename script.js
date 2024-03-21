@@ -1,6 +1,11 @@
+const loader = document.getElementById("overlay");
+const audio = document.getElementById("audioPlayer");
+
+let  audioIndex = 0;
+const audios = ["1", "2", "3"]
+
 function send(){
     const input = document.getElementById("input");
-    const loader = document.getElementById("overlay");
     const diashow = document.getElementById("diashow");
 
     const inputHost = document.getElementById("hostIP").value;
@@ -9,37 +14,43 @@ function send(){
     const host = "host";
     const password = "password";
 
+    const imgIds = ["img_1", "img_2", "img_3", "img_4", "img_5", "img_6", "img_7", "img_8"];
+
+
     if(host === inputHost && password === inputPassword) {
         input.classList.toggle("smaller-container");
         setTimeout(function() {
             input.style.display = "none";
             diashow.style.display = "block";
             loader.style.display = "block";
-        
+
+            audio.src = "assets/audio/voice_end.mp3"
+            audio.load();
+            audio.play();
+
+            setTimeout(function() {
+
+                imgIds.forEach((id, index) => {
+                    setTimeout(function() {
+                        const element = document.getElementById(id);
+                        if (element) { 
+                            element.style.opacity = 1;
+                        }
+                    }, 4000 * index); 
+                });
+            }, 5000);
         }, 200);
     }
 }
 
-/* var isSmall = false; 
-
-
-function toggleSize() {
-    var image = document.getElementById("img_1");
-    if (isSmall) {
-        image.classList.remove("small");
-        image.classList.add("large");
-    } else {
-        image.classList.remove("large");
-        image.classList.add("small");
-    }
-    isSmall = !isSmall; // Den Zustand umschalten
-}
-
-// Animationsloop
-setInterval(toggleSize, 6000);  */
-
-/* document.addEventListener("click", function(event) {
-    // Die Funktion, die bei jedem Mausklick auf der Seite ausgeführt wird
-    console.log("Ein Mausklick wurde auf der Seite ausgelöst!");
-    console.log("Position des Mausklicks - X: " + event.clientX + ", Y: " + event.clientY);
-}); */
+document.addEventListener("click", function(event) {
+    
+    if(loader.style.display !== 'block') {
+        audioIndex += 1;
+        if(audioIndex > audios.length) audioIndex = 1;
+            audio.src = "assets/audio/voice_" + audioIndex + ".mp3"
+            
+            audio.load();
+            audio.play();
+        }   
+});
