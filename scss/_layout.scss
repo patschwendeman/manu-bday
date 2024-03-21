@@ -8,20 +8,20 @@
     justify-content: center;
     top: 0;
     left: 0;
-    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(9, 9, 9, 1)), url('/assets/background.jpg');
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(9, 9, 9, 1)), url('/assets/images/background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     font-family: Arial, sans-serif;
     font-size: 20px;
 
     .warning {
-        color: red;
+        color: $color-red;
         position: fixed;
         bottom: 0; 
     }
     
     .legal {
-        color: red;
+        color: $color-red;
         position: fixed;
         bottom: 0;
         right: 0;
@@ -29,7 +29,14 @@
     
     .alert {
         position: fixed;
-        color: red;
+        color: $color-red;
+    }
+
+    .anonymous {
+        position: fixed;
+        width: 50px;
+        left: 50px;
+        top: 50px;
     }
 }
 

@@ -4,12 +4,14 @@
     transition: transform 10s ease-in-out;
     animation: resize 10s infinite alternate;
     z-index: 10;
+    opacity: 0;
+    transition: opacity 2s ease;
 }
 
 @keyframes resize {
-    0% { transform: scale(1); } /* Startzustand: Originalgröße */
-    50% { transform: scale(0.5); } /* 50%: Kleiner als Original */
-    100% { transform: scale(2); } /* 100%: Größer als Original */
+    0% { transform: scale(1); } 
+    50% { transform: scale(0.5); } 
+    100% { transform: scale(2); } 
 }
 
 .diashow-img:nth-child(1) {
