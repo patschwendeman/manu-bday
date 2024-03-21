@@ -4,6 +4,17 @@ const audio = document.getElementById("audioPlayer");
 let  audioIndex = 0;
 const audios = ["1", "2", "3"]
 
+function playSound() {
+    if(loader.style.display !== 'block') {
+        audioIndex += 1;
+        if(audioIndex > audios.length) audioIndex = 1;
+            audio.src = "assets/audio/voice_" + audioIndex + ".mp3"
+            
+            audio.load();
+            audio.play();
+        } 
+}  
+
 function send(){
     const input = document.getElementById("input");
     const diashow = document.getElementById("diashow");
@@ -41,16 +52,12 @@ function send(){
             }, 5000);
         }, 200);
     }
+    else {
+        playSound();
+    }
 }
 
-document.addEventListener("click", function(event) {
+/* document.addEventListener("click", function(event) {
+    playSound();
     
-    if(loader.style.display !== 'block') {
-        audioIndex += 1;
-        if(audioIndex > audios.length) audioIndex = 1;
-            audio.src = "assets/audio/voice_" + audioIndex + ".mp3"
-            
-            audio.load();
-            audio.play();
-        }   
-});
+}); */
