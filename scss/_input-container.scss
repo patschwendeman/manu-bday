@@ -56,6 +56,10 @@
             height: 30px;
         }
 
+        button {
+            cursor: pointer;
+        }
+
         .disbled {
             pointer-events: none;
             color: $color-red;
