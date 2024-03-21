@@ -1,5 +1,6 @@
 const loader = document.getElementById("overlay");
 const audio = document.getElementById("audioPlayer");
+const music = document.getElementById("musicPlayer");
 
 let  audioIndex = 0;
 const audios = ["1", "2", "3"]
@@ -40,7 +41,20 @@ function send(){
             audio.play();
 
             setTimeout(function() {
+                music.volume = 0;
+                music.play();
+                var increment = 0.01; 
+                var intervalTime = 1000; 
+                var fadeInterval = setInterval(function() {
+                    if (music.volume + increment < 1) {
+                        music.volume += increment; 
+                    } else {
+                        clearInterval(fadeInterval); 
+                    }
+                }, intervalTime);
+            }, 200); 
 
+            setTimeout(function() {
                 imgIds.forEach((id, index) => {
                     setTimeout(function() {
                         const element = document.getElementById(id);
