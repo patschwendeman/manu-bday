@@ -36,7 +36,7 @@ function send(){
             diashow.style.display = "block";
             loader.style.display = "block";
 
-            audio.src = "assets/audio/voice_end.mp3"
+            audio.src = "assets/audio/voice_end2.mp3"
             audio.load();
             audio.play();
 
