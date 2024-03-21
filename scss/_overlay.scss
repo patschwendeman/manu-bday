@@ -1,0 +1,21 @@
+.overlay {
+    background-color: green;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+    transition: transform 0.2s ease-in;
+    display: none;
+
+    .loader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
