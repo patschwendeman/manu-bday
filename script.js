@@ -1,7 +1,7 @@
 function send(){
     const input = document.getElementById("input");
     const loader = document.getElementById("overlay");
-    const info = document.getElementById("info");
+    const diashow = document.getElementById("diashow");
 
     const inputHost = document.getElementById("hostIP").value;
     const inputPassword = document.getElementById("password").value;
@@ -10,10 +10,10 @@ function send(){
     const password = "password";
 
     if(host === inputHost && password === inputPassword) {
-        input.classList.toggle("smaller");
+        input.classList.toggle("smaller-container");
         setTimeout(function() {
             input.style.display = "none";
-            info.style.display = "block";
+            diashow.style.display = "block";
             loader.style.display = "block";
         
         }, 200);
